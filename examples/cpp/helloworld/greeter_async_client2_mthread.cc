@@ -130,6 +130,7 @@ int main(int argc, char** argv) {
 
   // Spawn reader thread that loops indefinitely
   std::thread thread_ = std::thread(&GreeterClient::AsyncCompleteRpc, &greeter);
+  std::thread thread2_ = std::thread(&GreeterClient::AsyncCompleteRpc, &greeter);
 
   for (int i = 0; i < 100; i++) {
     std::string user("world " + std::to_string(i));
@@ -138,6 +139,7 @@ int main(int argc, char** argv) {
 
   std::cout << "Press control-c to quit" << std::endl << std::endl;
   thread_.join();  // blocks forever
+  thread2_.join();  // blocks forever
 
   return 0;
 }

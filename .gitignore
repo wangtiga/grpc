@@ -1,3 +1,7 @@
+# my
+examples/cpp/helloworld/xbuild/
+*.swo
+
 # C/C++ build outputs
 .build/
 bins
